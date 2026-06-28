@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Enquiry - Login / Register</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* RESET */
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    overflow-x:hidden;
+}
+
+/* SLIDESHOW */
+.slide{
+    position:fixed;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    animation:fade 25s infinite;
+    z-index:-3;
+}
+.slide:nth-child(1){background-image:url("slide1.jpg");animation-delay:0s;}
+.slide:nth-child(2){background-image:url("slide2.jpg");animation-delay:5s;}
+.slide:nth-child(3){background-image:url("slide3.jpg");animation-delay:10s;}
+.slide:nth-child(4){background-image:url("slide4.jpg");animation-delay:15s;}
+.slide:nth-child(5){background-image:url("slide5.jpg");animation-delay:20s;}
+
+@keyframes fade{
+    10%{opacity:1;}
+}
+
+/* LOGO  */
+.logo{
+    position:fixed;
+    top:12px;
+    left:25px;
+    z-index:20;
+}
+.logo img{
+    height:50px;   /* 👈 reduced size */
+    width:auto;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:15px 40px;
+    display:flex;
+    justify-content:center;
+    background:rgba(0,0,0,0.4);
+    z-index:10;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 25px;
+    font-size:18px;
+    font-weight:bold;
+}
+nav a:hover{color:#ffcc00;}
+
+/* AUTH BOX */
+.auth-box{
+    background:white;
+    width:360px;
+    margin:160px auto 80px;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.4);
+    position:relative;
+    z-index:5;
+}
+.auth-box h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:black;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+button:hover{background:#333;}
+
+.switch{
+    text-align:center;
+    margin-top:15px;
+}
+.switch span{
+    color:#0066ff;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+#registerForm{display:none;}
+
+/* FOOTER */
+.footer{
+    background:linear-gradient(to right,#111,#222);
+    color:#ddd;
+    padding-top:50px;
+}
+.footer-container{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.footer-box h3{
+    color:#ffcc00;
+    margin-bottom:15px;
+}
+
+.footer-box p,
+.footer-box li{
+    font-size:14px;
+    line-height:1.6;
+}
+
+.footer-box ul{
+    list-style:none;
+    padding:0;
+}
+.footer-box ul li{
+    margin-bottom:10px;
+}
+.footer-box ul li a{
+    color:#bbb;
+    text-decoration:none;
+}
+.footer-box ul li a:hover{
+    color:#ffcc00;
+}
+
+/* SOCIAL ICONS */
+.footer-social{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+}
+.footer-social a{
+    width:36px;
+    height:36px;
+    background:#000;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    transition:0.3s;
+}
+.footer-social a:hover{
+    background:#ffcc00;
+    color:black;
+    transform:scale(1.15);
+}
+
+.footer-bottom{
+    margin-top:40px;
+    padding:15px;
+    background:black;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SLIDES -->
+<div class="slide"></div>
+<div class="slide"></div>
+<div class="slide"></div>
+<div class="slide"></div>
+<div class="slide"></div>
+
+<!-- LOGO -->
+<div class="logo">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.e_2icgUx749sEI0czgr7NwHaHa?pid=Api&P=0&h=220" alt="Restaurant Logo">
+</div>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="home.html">Home</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="menu.html">Menu</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<!-- AUTH BOX -->
+<div class="auth-box">
+    <div id="loginForm">
+        <h2>🔐 Login</h2>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button>Login</button>
+        <div class="switch">
+            New user? <span onclick="showRegister()">Register</span>
+        </div>
+    </div>
+
+    <div id="registerForm">
+        <h2>📝 Register</h2>
+        <input type="text" placeholder="Username">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button>Register</button>
+        <div class="switch">
+            Already have an account? <span onclick="showLogin()">Login</span>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-container">
+
+    <div class="footer-box">
+        <h3>Royal Restaurant</h3>
+        <p>Serving delicious food with love and quality.</p>
+    </div>
+
+    <div class="footer-box">
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/login" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/accounts/login/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/login" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-box">
+        <h3>Opening Hours</h3>
+        <ul>
+ '          <li>Mon – Fri : 10 AM – 10 PM</li>
+            <li>Saturday : 9 AM – 11 PM</li>
+            <li>Sunday : 9 AM – 10 PM</li>
+        </ul>
+    </div>
+
+    <div class="footer-box">
+        <h3>Contact</h3>
+        <p>📍 Chennai, Tamil Nadu</p>
+        <p>📞 +91 9348627395</p>
+        <p>✉ royalrestaurant@gmail.com</p>
+    </div>
+
+</div>
+
+<div class="footer-bottom">
+    © 2025 Royal Restaurant | All Rights Reserved
+</div>
+</footer>
+
+<script>
+function showRegister(){
+    loginForm.style.display="none";
+    registerForm.style.display="block";
+}
+function showLogin(){
+    registerForm.style.display="none";
+    loginForm.style.display="block";
+}
+</script>
+
+</body>
+</html>

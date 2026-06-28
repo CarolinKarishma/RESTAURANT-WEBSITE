@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+
+<style>
+/* COMMON */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('bg.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* NAV */
+.navbar {
+    width: 100%;
+    background: rgba(255,255,255,0.6);
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(8px);
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #003d66;
+    font-weight: bold;
+}
+
+/* FORM */
+.box {
+    margin-top: 130px;
+    background: rgba(255,255,255,0.85);
+    width: 420px;
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+.logo {
+    width: 110px;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+button {
+    width: 95%;
+    padding: 12px;
+    background: #004d80;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.link {
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #003d66;
+}
+</style>
+
+<script>
+function validateRegister() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let pass = document.getElementById("password").value.trim();
+    let cpass = document.getElementById("confirm").value.trim();
+
+    if (name === "" || email === "" || pass === "" || cpass === "") {
+        alert("Please fill all fields!");
+        return false;
+    }
+
+    let emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailCheck.test(email)) {
+        alert("Enter a valid email!");
+        return false;
+    }
+
+    if (pass.length < 6) {
+        alert("Password must be at least 6 characters!");
+        return false;
+    }
+
+    if (pass !== cpass) {
+        alert("Passwords do not match!");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="home.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="contact.html">Contact</a>
+    <a href="profile.html">Profile</a>
+</div>
+
+<div class="box">
+    <img src="logo.png" class="logo">
+    <h2>Create Account</h2>
+
+    <form onsubmit="return validateRegister()">
+        <input id="name" type="text" placeholder="Full Name">
+        <input id="email" type="email" placeholder="Email">
+        <input id="password" type="password" placeholder="Password">
+        <input id="confirm" type="password" placeholder="Confirm Password">
+        <button type="submit">Register</button>
+    </form>
+
+    <div class="link" onclick="location.href='login.html'">Already have an account? Login</div>
+</div>
+
+</body>
+</html>

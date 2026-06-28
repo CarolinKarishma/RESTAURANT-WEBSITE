@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Menu</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* RESET */
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+.bg{
+    position:fixed;
+    inset:0;
+    background:url('slide1.jpg') center/cover no-repeat;
+    z-index:-2;
+}
+
+/* LOGO */
+.logo{
+    position:fixed;
+    top:10px;
+    left:10px;
+    z-index:30;
+}
+.logo img{height:50px;}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,0.45);
+    z-index:20;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 18px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+nav a:hover{color:#ffcc00;}
+
+/* CONTENT */
+.content{
+    min-height:100vh;
+    padding-top:140px;
+    padding-bottom:80px;
+    display:flex;
+    justify-content:center;
+}
+
+/* SINGLE BOX */
+.main-box{
+    width:100%;
+    max-width:550px;
+    background:rgba(255,255,255,0.96);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 12px 35px rgba(0,0,0,0.3);
+}
+
+/* TITLE */
+.main-box h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+/* SELECT */
+label{
+    font-weight:bold;
+    display:block;
+    margin-bottom:10px;
+}
+select{
+    width:100%;
+    padding:14px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+/* MENU */
+.menu{
+    display:none;
+    margin-top:20px;
+    padding-top:20px;
+    border-top:2px dashed #ddd;
+}
+.menu h2{
+    color:#e67e22;
+    text-align:center;
+    margin-bottom:15px;
+}
+.menu ul{
+    list-style:none;
+    padding:0;
+}
+.menu ul li{
+    padding:10px;
+    border-bottom:1px dotted #ccc;
+}
+
+/* FOOTER */
+.footer{
+    background:linear-gradient(to right,#111,#222);
+    color:#ddd;
+    padding-top:50px;
+}
+
+.footer-container{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.footer-box{
+    text-align:center;
+}
+
+.footer-logo{
+    color:#ffcc00;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.footer-icons a{
+    font-size:22px;
+    margin:0 12px;
+    color:white;
+    transition:0.3s;
+}
+
+.footer-icons a:hover{
+    color:#ffcc00;
+    transform:scale(1.3);
+}
+
+.footer-box h3{
+    color:#ffcc00;
+    margin-bottom:15px;
+}
+
+.footer-box ul{
+    list-style:none;
+    padding:0;
+}
+
+.footer-box ul li{
+    margin-bottom:10px;
+}
+
+.footer-box ul li a{
+    color:#bbb;
+    text-decoration:none;
+}
+
+.footer-box ul li a:hover{
+    color:#ffcc00;
+}
+
+.footer-bottom{
+    margin-top:40px;
+    padding:15px;
+    background:black;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="logo">
+<img src="https://tse2.mm.bing.net/th/id/OIP.e_2icgUx749sEI0czgr7NwHaHa?pid=Api&P=0&h=220">
+</div>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="menu.html">Menu</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="content">
+<div class="main-box">
+
+<h1>🍽️ Menu</h1>
+
+<label>Select Restaurant</label>
+<select id="restaurant" onchange="showMenu()">
+<option value="">-- Choose Restaurant --</option>
+<option value="menu1">🍕 Italian Corner</option>
+<option value="menu2">🍛 Indian Spice</option>
+<option value="menu3">🍔 Burger Hub</option>
+<option value="menu4">🥡 Chinese Wok</option>
+<option value="menu5">🍰 Dessert House</option>
+</select>
+
+<div id="menu1" class="menu">
+<h2>Italian Corner</h2>
+<ul>
+<li>Margherita Pizza</li>
+<li>Pasta Alfredo</li>
+<li>Garlic Bread</li>
+</ul>
+</div>
+
+<div id="menu2" class="menu">
+<h2>Indian Spice</h2>
+<ul>
+<li>Butter Chicken</li>
+<li>Paneer Tikka</li>
+<li>Biryani</li>
+</ul>
+</div>
+
+<div id="menu3" class="menu">
+<h2>Burger Hub</h2>
+<ul>
+<li>Cheese Burger</li>
+<li>Veg Burger</li>
+<li>French Fries</li>
+</ul>
+</div>
+
+<div id="menu4" class="menu">
+<h2>Chinese Wok</h2>
+<ul>
+<li>Fried Rice</li>
+<li>Noodles</li>
+<li>Manchurian</li>
+</ul>
+</div>
+
+<div id="menu5" class="menu">
+<h2>Dessert House</h2>
+<ul>
+<li>Chocolate Cake</li>
+<li>Ice Cream</li>
+<li>Brownies</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<footer class="footer">
+<div class="footer-container">
+
+<div class="footer-box">
+<h2 class="footer-logo">Royal Restaurant</h2>
+<p>Serving delicious food with love and passion.</p>
+</div>
+
+<div class="footer-box">
+<div class="footer-icons">
+            <a href="https://www.facebook.com/login" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/accounts/login/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/login" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+<h3>Quick Links</h3>
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="menu.html">Menu</a></li>
+<li><a href="order.html">Order</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+
+<div class="footer-box">
+<h3>Opening Hours</h3>
+<ul>
+<li>Mon – Fri : 10 AM – 10 PM</li>
+<li>Sat – Sun : 9 AM – 11 PM</li>
+</ul>
+</div>
+
+<div class="footer-box">
+<h3>Contact</h3>
+<p>📍 Chennai</p>
+<p>📞 +91 9348627395</p>
+<p>✉ royalrestaurant@gmail.com</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2025 Royal Restaurant | All Rights Reserved
+</div>
+</footer>
+
+<script>
+function showMenu(){
+    let selected=document.getElementById("restaurant").value;
+    document.querySelectorAll(".menu").forEach(m=>m.style.display="none");
+    if(selected) document.getElementById(selected).style.display="block";
+}
+</script>
+
+</body>
+</html>
