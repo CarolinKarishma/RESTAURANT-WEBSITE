@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND SLIDER */
+.slide{
+    position:fixed;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    animation:fade 20s infinite;
+    z-index:-1;
+}
+.slide:nth-child(1){background-image:url('slide1.jpg');animation-delay:0s;}
+.slide:nth-child(2){background-image:url('slide2.jpg');animation-delay:5s;}
+.slide:nth-child(3){background-image:url('slide3.jpg');animation-delay:10s;}
+.slide:nth-child(4){background-image:url('slide4.jpg');animation-delay:15s;}
+
+@keyframes fade{
+    10%{opacity:1;}
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:12px 30px;
+    display:flex;
+    align-items:center;
+    background:rgba(0,0,0,0.45);
+    z-index:100;
+}
+
+/* LOGO */
+.logo img{
+    height:50px;
+}
+
+/* NAV LINKS */
+.nav-links{
+    margin:auto;
+}
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 18px;
+    font-size:18px;
+    font-weight:bold;
+}
+.nav-links a:hover{
+    color:#ffcc00;
+}
+
+/* CONTACT BOX */
+.page-box{
+    background:#fff;
+    width:85%;
+    max-width:900px;
+    margin:140px auto 100px;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+.page-box h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+.detail{
+    font-size:18px;
+    margin:15px 0;
+}
+
+/* FOOTER */
+footer{
+    background:linear-gradient(to right,#0f0f0f,#1b1b1b);
+    color:#ddd;
+    padding:70px 0 0;
+}
+
+.footer-container{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+}
+
+footer h3{
+    color:#ffcc00;
+    margin-bottom:15px;
+}
+
+footer ul{
+    list-style:none;
+}
+footer ul li{
+    margin-bottom:10px;
+}
+footer ul li a{
+    color:#bbb;
+    text-decoration:none;
+}
+footer ul li a:hover{
+    color:#ffcc00;
+}
+
+/* SOCIAL ICONS */
+.footer-social{
+    display:flex;
+    gap:15px;
+    margin-top:15px;
+}
+.footer-social a{
+    width:38px;
+    height:38px;
+    background:#111;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    transition:0.3s;
+}
+.footer-social a:hover{
+    background:#ffcc00;
+    color:black;
+    transform:scale(1.2);
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom{
+    margin-top:45px;
+    padding:18px;
+    background:black;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND SLIDES -->
+<div class="slide"></div>
+<div class="slide"></div>
+<div class="slide"></div>
+<div class="slide"></div>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.e_2icgUx749sEI0czgr7NwHaHa?pid=Api&P=0&h=220" alt="Restaurant Logo">
+    </div>
+
+    <div class="nav-links">
+        <a href="slide.html">Home</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Order</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<!-- CONTACT CONTENT -->
+<div class="page-box">
+    <h2>📞 Contact Us</h2>
+    <div class="detail">📍 Royal Restaurant, Main Road, Chennai</div>
+    <div class="detail">📞 +91 9348627395</div>
+    <div class="detail">📧 royalrestaurant@gmail.com</div>
+    <div class="detail">🕒 10 AM – 10 PM</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+
+        <div>
+            <h3>Royal Restaurant</h3>
+            <p>Serving delicious food with love and passion 🍽️</p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/login" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/accounts/login/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/login" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="slide.html">Home</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Opening Hours</h3>
+            <p>Mon – Fri : 10 AM – 10 PM</p>
+            <p>Sat – Sun : 9 AM – 11 PM</p>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <p>📍 Chennai</p>
+            <p>📞 +91 9348627395</p>
+            <p>✉ royalrestaurant@gmail.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Royal Restaurant | All Rights Reserved
+    </div>
+</footer>
+
+</body>
+</html>
