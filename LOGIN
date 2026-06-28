@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Login</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+        background: url("bg.jpg") no-repeat center/cover;
+    }
+
+    /* ---------- NAVIGATION BAR ---------- */
+    .navbar {
+        width: 100%;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        background:rgba(0,0,0,0.5);
+    }
+
+    .navbar a {
+        margin: 0 20px;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+   
+    }
+
+    /* ---------- LOGO BELOW NAVBAR ---------- */
+
+.logo {
+        width: 120px;
+        border-radius: 50%;
+        margin-top: 100px;   /* pushes logo below navbar */
+        margin-left: 20px;
+    }
+    
+
+    .logo-area img {
+        height: 100px; /* Adjust size */
+        
+}
+
+    /* ---------- FORM BOX ---------- */
+    .form-container {
+        width: 350px;
+        margin: 40px auto;
+        background: white;
+        padding: 35px;
+        border-radius: 18px;
+        box-shadow: 0px 4px 18px rgba(0,0,0,0.25);
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    input {
+        width: 90%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        background: #f4f4f4;
+    }
+
+    .login-btn {
+        width: 95%;
+        padding: 12px;
+        margin-top: 10px;
+        border-radius: 20px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .login-btn:hover {
+        background-color: #005fcc;
+    }
+
+    .link {
+        display: block;
+        margin-top: 15px;
+        font-size: 14px;
+        color: #007bff;
+        text-decoration: none;
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR -->
+<div class="navbar">
+    <a href="home.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="contact.html">Contact</a>
+    <a href="profile.html">Profile</a>
+</div>
+
+<!-- LOGO BELOW NAVBAR (LEFT SIDE) -->
+<div class="logo-area">
+<img src="logo.jpg" alt="Logo">
+</div>
+
+<!-- CENTERED LOGIN FORM -->
+<div class="form-container">
+    <h2>User Login</h2>
+
+    <form action="home.html">
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+
+        <button class="login-btn">Login</button>
+
+        <a class="link" href="register.html">Create New Account</a>
+    </form>
+</div>
+
+</body>
+</html>
